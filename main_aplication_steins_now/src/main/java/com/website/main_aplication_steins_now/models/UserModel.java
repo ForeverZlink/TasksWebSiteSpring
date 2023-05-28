@@ -4,6 +4,7 @@ package com.website.main_aplication_steins_now.models;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.Set;
 
 @Entity
 public class UserModel {
@@ -18,6 +19,9 @@ public class UserModel {
     private Date birthDate;
 
     public String Email;
+
+    @ManyToMany
+    private Set<Roles> Roles;
 
     public String getEmail() {
         return Email;
