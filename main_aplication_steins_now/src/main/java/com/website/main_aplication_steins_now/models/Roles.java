@@ -1,13 +1,12 @@
 package com.website.main_aplication_steins_now.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import org.springframework.security.core.userdetails.User;
 
 import java.util.Set;
 
+
+@Entity
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
