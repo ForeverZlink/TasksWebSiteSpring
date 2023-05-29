@@ -34,4 +34,12 @@ public class UserModel {
     public String getUsername() {
         return Username;
     }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public void setRoles(Set<com.website.main_aplication_steins_now.models.Roles> roles) {
+        Roles = roles;
+    }
 }
