@@ -12,27 +12,27 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int Id;
 
-    private String Username;
+    public String username;
     private  String Password;
 
     @Temporal(TemporalType.DATE)
     private Date birthDate;
 
-    public String Email;
+    public String email;
 
     @ManyToMany
     private Set<Roles> Roles;
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public String getPassword() {
         return Password;
     }
 
-    public String getUsername() {
-        return Username;
+    public String GetUsername() {
+        return username;
     }
 
     public void setPassword(String password) {
