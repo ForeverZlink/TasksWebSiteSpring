@@ -7,13 +7,14 @@ import java.sql.Date;
 import java.util.Set;
 
 @Entity
+@Table(name="User")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int Id;
 
-    public String username;
-    private  String Password;
+    private String username;
+    private  String password;
 
     @Temporal(TemporalType.DATE)
     private Date birthDate;
@@ -26,17 +27,23 @@ public class UserModel {
     public String getEmail() {
         return email;
     }
+    public void setEmail(String email){
+        this.email=email;
 
+    }
+    public void setUsername(String username){
+        this.username=username;
+    }
     public String getPassword() {
-        return Password;
+        return password;
     }
 
-    public String GetUsername() {
-        return username;
+    public String getUsername() {
+        return this.username;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public void setRoles(Set<com.website.main_aplication_steins_now.models.Roles> roles) {
