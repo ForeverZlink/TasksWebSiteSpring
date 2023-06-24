@@ -80,21 +80,21 @@
 <body class="text-center">
 
 <main class="form-signin w-100 m-auto">
-    <form>
+        <form action="" th:action="@{/user/createNewUserPost}" th:object="${user}"  method="post">
 
         <h1 class="h3 mb-3 fw-normal">Por favor, faça seu cadastro.</h1>
         <div class="form-floating">
-            <input type="password" class="form-control" id="username" placeholder="Password">
+            <input type="text" class="form-control" th:field="*{username}" id="username" placeholder="Password">
             <label for="username">Nome de usuário</label>
         </div>
 
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Endereço de email</label>
+            <input type="email" class="form-control" th:field="*{email}"  id="email" placeholder="name@example.com">
+            <label for="email">Endereço de email</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Sua senha</label>
+            <input type="password" class="form-control"  th:field="*{password}" id="password" placeholder="Password">
+            <label for="password">Sua senha</label>
         </div>
 
 
@@ -103,7 +103,7 @@
                 <input type="checkbox" value="remember-me"> Manter logado
             </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Criar cadastro</button>
+        <button class="w-100 btn btn-lg btn-primary" value="Submit" type="submit">Criar cadastro</button>
 
     </form>
 </main>
