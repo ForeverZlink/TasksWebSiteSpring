@@ -26,4 +26,11 @@ public class UserController {
 
         return "form_create_user";
     }
+
+    @PostMapping("/Create_New_User")
+    public String create_New_User_Post(@ModelAttribute UserModel user){
+        this.userService.addEntity(user);
+
+        return "index";
+    }
 }
