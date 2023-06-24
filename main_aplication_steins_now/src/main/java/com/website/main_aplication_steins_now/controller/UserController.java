@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/User")
+@RequestMapping("/user")
 public class UserController {
 
     public UserService userService;
@@ -20,15 +20,15 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/Create_New_User")
-    public String Create_New_User(Model model){
+    @GetMapping("/createNewUser")
+    public String createNewUser(Model model){
         model.addAttribute("user",new UserModel());
 
         return "form_create_user";
     }
 
-    @PostMapping("/Create_New_User")
-    public String create_New_User_Post(@ModelAttribute UserModel user){
+    @PostMapping("/createNewUserPost")
+    public String createNewUserPost(@ModelAttribute UserModel user){
         this.userService.addEntity(user);
 
         return "index";
