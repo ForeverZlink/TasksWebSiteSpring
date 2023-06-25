@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.util.Set;
 
 @Entity
-@Table(name="User")
+@Table(name="user")
 public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +15,20 @@ public class UserModel {
 
     private String username;
     private  String password;
+
+    private boolean enabled;
+
+    public int getId() {
+        return Id;
+    }
+
+    public boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     @Temporal(TemporalType.DATE)
     private Date birthDate;
